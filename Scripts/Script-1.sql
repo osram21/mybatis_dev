@@ -92,3 +92,6 @@ INSERT INTO COURSE_ENROLLMENT (COURSE_ID,STUD_ID) VALUES
  
 select stud_id, name, email, phone, dob from students where STUD_ID =1;
 select*from students;
+
+select STUD_ID, NAME, EMAIL,PHONE,DOB, a.ADDR_ID,street,city,state,zip,country
+from students s left join addresses a on s.ADDR_ID=a.ADDR_ID;

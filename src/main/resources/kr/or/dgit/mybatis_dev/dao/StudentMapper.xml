@@ -34,12 +34,49 @@
 		<id property="studId" column="stud_id"/>
 		<result property="name" column="name"/>
 		<result property="email" column="email"/>
+		<result property="phone" column="phone"/>
+		<result property="dob" column="dob"/>
 	</resultMap>
+	
+	<resultMap type="Student" id="StudentResultExtends" extends="StudentResult">
+		<result property="address.addrId" column="addr_id"/>
+		<result property="address.street" column="street"/>
+		<result property="address.city" column="city"/>
+		<result property="address.state" column="state"/>
+		<result property="address.zip" column="zip"/>
+		<result property="address.country" column="country"/>
+	</resultMap>
+	
+	<resultMap type="Student" id="StudentResultAssociation" extends="StudentResult">
+		<association property="address" resultMap="kr.or.dgit.mybatis_dev.dao.AddressMapper"></association>
+	</resultMap>
+	
+	<select id="selectStudentByNoAssociationAddress" parameterType="Student" resultMap="StudentResult">
+		select STUD_ID, NAME, EMAIL,PHONE,DOB, a.ADDR_ID,street,city,state,zip,country
+		from students s left join addresses a on s.ADDR_ID=a.ADDR_ID
+		<include refid="whereSql"></include>
+	</select>
+	
+	<select id="selectStudentByNoforWithAddress" parameterType="Student" resultMap="StudentResultExtends">
+		select STUD_ID, NAME, EMAIL,PHONE,DOB, a.ADDR_ID,street,city,state,zip,country
+		from students s left join addresses a on s.ADDR_ID=a.ADDR_ID
+		<include refid="whereSql"/>
+	</select>
+	
 	<select id="selectStudentByNoforResultMap" parameterType="Student" resultMap="StudentResult">
 		<include refid="selectSql"/>
 		<include refid="whereSql"/>
 	</select>
 	<select id="selectStudentByAllforResultMap" resultMap="StudentResult">
+		<include refid="selectSql"/>
+	</select>
+	
+	<!-- hashmap으로 결과리턴 -->
+	<select id="selectStudentByNoforHashMap" parameterType="Student" resultType="map">
+		<include refid="selectSql"/>
+		<include refid="whereSql"/>
+	</select>
+	<select id="selectStudentByAllforHashMap" resultType="map">
 		<include refid="selectSql"/>
 	</select>
 	
