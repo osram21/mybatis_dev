@@ -95,3 +95,8 @@ select*from students;
 
 select STUD_ID, NAME, EMAIL,PHONE,DOB, a.ADDR_ID,street,city,state,zip,country
 from students s left join addresses a on s.ADDR_ID=a.ADDR_ID;
+
+select t.TUTOR_ID,t.NAME as tutor_name ,EMAIL,c.COURSE_ID,c.NAME,DESCRIPTION,start_date,end_date
+from tutors t left join addresses a on t.ADDR_ID = a.ADDR_ID
+left join courses c on t.ADDR_ID=c.TUTOR_ID
+where t.TUTOR_ID=3;
