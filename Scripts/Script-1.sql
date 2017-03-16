@@ -113,4 +113,12 @@ where TUTOR_ID = 1 or TUTOR_ID =2;
 select*from courses
 where TUTOR_ID in(1,2);
 
+select*from students;
 
+create table user_pics(
+	id int(11) not null auto_increment,
+	name varchar(50) default null,
+	pic blob,
+	bio longtext,
+	primary key(id)
+);

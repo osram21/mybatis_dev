@@ -57,12 +57,21 @@ public class StudentService {
 		}
 	}
 	
-	public int insertStudent(Student student){
+	public int insertStudent(Student student) {
 		log.debug("insertStudent");
-		
-		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
-			int res = StudentMapper.
-			return sqlSession.selectOne(namespace+".insertStudent", student);
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			int res = sqlSession.getMapper(StudentMapper.class).insertStudent(student);
+			sqlSession.commit();
+			return res;
+		}
+	}
+	
+	public int updateSetStudent(Student student) {
+		int res = -1;
+		try (SqlSession sqlSession = MybatisSqlSessionFactory.openSession()) {
+			res = sqlSession.getMapper(StudentMapper.class).updateSetStudent(student);
+			sqlSession.commit();
+			return res;
 		}
 	}
 }

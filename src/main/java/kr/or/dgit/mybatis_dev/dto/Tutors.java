@@ -9,8 +9,41 @@ public class Tutors {
 	private Address address;
 	private List<Course> courses;
 	private Gender gender;
+	private PhoneNumber phone;
 	
+	public Tutors(int tutorId, String name, String email, Address address, List<Course> courses, Gender gender,
+			PhoneNumber phone) {
+		super();
+		this.tutorId = tutorId;
+		this.name = name;
+		this.email = email;
+		this.address = address;
+		this.courses = courses;
+		this.gender = gender;
+		this.phone = phone;
+	}
 	
+
+	public Tutors(int tutorId, String name, String email, Gender gender, PhoneNumber phone) {
+		super();
+		this.tutorId = tutorId;
+		this.name = name;
+		this.email = email;
+		this.gender = gender;
+		this.phone = phone;
+	}
+
+
+	public PhoneNumber getPhone() {
+		return phone;
+	}
+
+
+	public void setPhone(PhoneNumber phone) {
+		this.phone = phone;
+	}
+
+
 	public Gender getGender() {
 		return gender;
 	}

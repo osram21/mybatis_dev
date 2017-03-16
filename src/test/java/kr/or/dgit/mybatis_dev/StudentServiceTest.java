@@ -1,10 +1,7 @@
 package kr.or.dgit.mybatis_dev;
 
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.Date;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,6 +12,8 @@ import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
 
+import kr.or.dgit.mybatis_dev.dto.Gender;
+import kr.or.dgit.mybatis_dev.dto.PhoneNumber;
 import kr.or.dgit.mybatis_dev.dto.Student;
 import kr.or.dgit.mybatis_dev.services.StudentService;
 
@@ -96,11 +95,26 @@ public class StudentServiceTest {
 		Assert.assertNotNull(selectStudent);
 	}*/
 	
-	@Test
+	/*@Test
 	public void testinsertStudent() {
 		Student student = new Student();
 		student.setStudId(1);
 		Student selectStudent = studentService.selectStudentByNoAssociationAddress(student);
 		Assert.assertNotNull(selectStudent);
-	}
+	}*/
+	
+	/*@Test
+	   public void testinsertStudent(){
+	      Student std = new Student(4, "홍길동", "hgd@test.co.kr",new Date(),new PhoneNumber("010-5555-5555"));
+	      std.setGender(Gender.FEMALE);
+	      int res  = studentService.insertStudent(std);
+	      Assert.assertEquals(1, res);
+	   }*/
+/*	@Test
+	public void TestupdateSetStudent() {
+		Student std = new Student(3, "설동현", "sdh@test.co.kr", new Date(), new PhoneNumber("010-2618-4317"));
+		int res = studentService.updateSetStudent(std);
+		Assert.assertEquals(1, res);
+
+	}*/
 }
