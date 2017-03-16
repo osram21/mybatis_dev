@@ -96,4 +96,11 @@ public class StudentServiceTest {
 		Assert.assertNotNull(selectStudent);
 	}*/
 	
+	@Test
+	public void testinsertStudent() {
+		Student student = new Student();
+		student.setStudId(1);
+		Student selectStudent = studentService.selectStudentByNoAssociationAddress(student);
+		Assert.assertNotNull(selectStudent);
+	}
 }

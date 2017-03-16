@@ -15,4 +15,6 @@ public interface StudentMapper {
 	Student selectStudentByNoforWithAddress(Student student);
 	
 	Student selectStudentByNoAssociationAddress(Student student);
+	
+	int insertStudent(Student student);
 }

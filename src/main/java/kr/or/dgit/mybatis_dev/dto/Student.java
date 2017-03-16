@@ -9,7 +9,16 @@ public class Student {
 	private Date dob;
 	private PhoneNumber phone;
 	private Address address;
+	private Gender gender;
 	
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
+	}
+
 	public Address getAddress() {
 		return address;
 	}
@@ -71,6 +80,6 @@ public class Student {
 	
 	@Override
 	public String toString() {
-		return String.format("%s, %s, %s, %s %s %s", studId, name, email, dob, phone,address);
+		return String.format("%s, %s, %s, %s %s %s %s", studId, name, email, dob, phone,address,gender);
 	}
 }

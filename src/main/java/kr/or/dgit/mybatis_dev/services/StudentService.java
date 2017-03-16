@@ -56,4 +56,13 @@ public class StudentService {
 			return sqlSession.selectOne(namespace+".selectStudentByNoAssociationAddress", student);
 		}
 	}
+	
+	public int insertStudent(Student student){
+		log.debug("insertStudent");
+		
+		try(SqlSession sqlSession = MybatisSqlSessionFactory.openSession()){
+			int res = StudentMapper.
+			return sqlSession.selectOne(namespace+".insertStudent", student);
+		}
+	}
 }

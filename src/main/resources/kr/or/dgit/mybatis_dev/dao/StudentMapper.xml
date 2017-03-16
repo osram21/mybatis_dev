@@ -19,7 +19,7 @@
 	</sql>
 	
 	<sql id="insertSql">
-		insert into students (stud_id, name, email, phone, dob)
+		insert into students (stud_id, name, email, phone, dob,gender)
 	</sql>
 	
 	<sql id="valuesSql">
