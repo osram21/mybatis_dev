@@ -23,7 +23,7 @@ public class TutorServiceTest {
 	      tutorService = null;
 	   }
 
-	   @Test
+	  /* @Test
 	   public void testFindTutorById() {
 	      Tutors tutor = tutorService.findTutorById(1);
 	      Assert.assertNotNull(tutor);
@@ -34,6 +34,5 @@ public class TutorServiceTest {
 	         Assert.assertNotNull(course);
 	         System.out.println(course);
 	      }
-	   }
-
+	   }*/
 }

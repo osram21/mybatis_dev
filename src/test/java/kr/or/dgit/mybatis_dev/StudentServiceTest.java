@@ -44,7 +44,7 @@ public class StudentServiceTest {
 
 	
 	////////////////////////////////////////
-	@Test
+	/*@Test
 	public void testselectStudentByNoforResultMap() {
 		Student student = new Student();
 		student.setStudId(1);
@@ -94,6 +94,6 @@ public class StudentServiceTest {
 		student.setStudId(1);
 		Student selectStudent = studentService.selectStudentByNoAssociationAddress(student);
 		Assert.assertNotNull(selectStudent);
-	}
+	}*/
 	
 }
